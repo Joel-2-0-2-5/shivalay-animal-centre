@@ -22,7 +22,7 @@ window.CONFIG = {
   ANIMALS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdvAObR4QhKhzKUze-vO1KyefN4jGUUJlei0WV3EzR2D2hAf7Z7BuAS1iwZ-c3uaUxfsj89MohqsOK/pubhtml?gid=0&single=true",
   // Google Forms
   ADOPT_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScYGwjjSY8ZSEHTi6U84xkcbtcYr3kCYIE96q0viykMbe0ZMQ/viewform?usp=publish-editor",  // the form's "viewform" link
-  ADOPT_FORM_ANIMAL_ENTRY: "", // e.g. "entry.123456789" (from Get pre-filled link)
+  ADOPT_FORM_ANIMAL_ENTRY: "entry.2047639538", // e.g. "entry.123456789" (from Get pre-filled link)
   REPORT_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSePXm5gtTviWw6OcaCNCC54TnR07c7vvpcmbyNuW5Wb_a7Z8w/viewform?usp=dialog",
   // Donations (section hidden if all blank)
   DONATE: { UPI: "", BANK: "", LINK: "" }
