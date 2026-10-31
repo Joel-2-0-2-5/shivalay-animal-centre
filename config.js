@@ -1,10 +1,9 @@
-// All editable settings live here. Items marked TODO are NOT verified by the centre.
 window.CONFIG = {
   CENTRE_NAME: "Shivalay Animal Wellness Centre",
   PARENT: "House of Stray Animals (HSA)",
   TAGLINE: "Giving every animal his due",
   ADDRESS: "Lane No. 1, Wazidpur, Sector 135, Noida, Uttar Pradesh 201304",
-  LANDMARK: "", // TODO: confirm with centre (nearby landmark)
+  LANDMARK: "", 
  SITE_BASE_URL: "https://joel-2-0-2-5.github.io/shivalay-animal-centre/", // change after enabling GitHub Pages
   PHONE: "+91 98180 48398",               // TODO: confirm with centre
   WHATSAPP: "919818048398",               // TODO: confirm with centre (digits only, with country code)
