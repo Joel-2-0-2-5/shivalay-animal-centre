@@ -5,7 +5,7 @@ window.CONFIG = {
   TAGLINE: "Giving every animal his due",
   ADDRESS: "Lane No. 1, Wazidpur, Sector 135, Noida, Uttar Pradesh 201304",
   LANDMARK: "", // TODO: confirm with centre (nearby landmark)
-  SITE_BASE_URL: "https://YOUR-USERNAME.github.io/YOUR-REPO", // change after enabling GitHub Pages
+ SITE_BASE_URL: "https://yourusername.github.io/shivalay-animal-centre", // change after enabling GitHub Pages
   PHONE: "+91 98180 48398",               // TODO: confirm with centre
   WHATSAPP: "919818048398",               // TODO: confirm with centre (digits only, with country code)
   EMAIL: "strayanimals12@gmail.com",      // TODO: confirm with centre
