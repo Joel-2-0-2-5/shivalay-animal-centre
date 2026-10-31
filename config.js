@@ -19,7 +19,7 @@ window.CONFIG = {
   SHOW_SAMPLE_BANNER: true,  // set false only when real data is live
   SHOW_HAPPY_TAILS: false,   // TODO: only true if the centre agrees
   // Google Sheets: File > Share > Publish to web > pick tab > CSV. Blank = use data/sample-data.js
-  ANIMALS_CSV_URL: "",
+  ANIMALS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdvAObR4QhKhzKUze-vO1KyefN4jGUUJlei0WV3EzR2D2hAf7Z7BuAS1iwZ-c3uaUxfsj89MohqsOK/pubhtml?gid=0&single=true",
   // Google Forms
   ADOPT_FORM_URL: "",  // the form's "viewform" link
   ADOPT_FORM_ANIMAL_ENTRY: "", // e.g. "entry.123456789" (from Get pre-filled link)
