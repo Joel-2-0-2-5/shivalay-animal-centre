@@ -1,0 +1,29 @@
+// All editable settings live here. Items marked TODO are NOT verified by the centre.
+window.CONFIG = {
+  CENTRE_NAME: "Shivalay Animal Wellness Centre",
+  PARENT: "House of Stray Animals (HSA)",
+  TAGLINE: "Giving every animal his due",
+  ADDRESS: "Lane No. 1, Wazidpur, Sector 135, Noida, Uttar Pradesh 201304",
+  LANDMARK: "", // TODO: confirm with centre (nearby landmark)
+  SITE_BASE_URL: "https://YOUR-USERNAME.github.io/YOUR-REPO", // change after enabling GitHub Pages
+  PHONE: "+91 98180 48398",               // TODO: confirm with centre
+  WHATSAPP: "919818048398",               // TODO: confirm with centre (digits only, with country code)
+  EMAIL: "strayanimals12@gmail.com",      // TODO: confirm with centre
+  FACEBOOK: "https://facebook.com/hsanoida", // TODO: confirm with centre
+  INSTAGRAM: "https://instagram.com/houseofstray", // TODO: confirm with centre
+  EMERGENCY_24X7_CLAIM: false, // TODO: confirm with centre; "24x7" appears only in parent-organisation material
+  HOURS: "",          // TODO: confirm with centre. Blank shows "Please call ahead"
+  FEES_INFO: "",      // TODO: confirm with centre (which services are free/paid). Blank shows "Please call ahead"
+  ADOPTION_POLICY: "", // TODO: confirm with centre (fees, home check rules)
+  HOME_CHECK_REQUIRED: null, // TODO: true/false once confirmed
+  SHOW_SAMPLE_BANNER: true,  // set false only when real data is live
+  SHOW_HAPPY_TAILS: false,   // TODO: only true if the centre agrees
+  // Google Sheets: File > Share > Publish to web > pick tab > CSV. Blank = use data/sample-data.js
+  ANIMALS_CSV_URL: "",
+  // Google Forms
+  ADOPT_FORM_URL: "",  // the form's "viewform" link
+  ADOPT_FORM_ANIMAL_ENTRY: "", // e.g. "entry.123456789" (from Get pre-filled link)
+  REPORT_FORM_URL: "",
+  // Donations (section hidden if all blank)
+  DONATE: { UPI: "", BANK: "", LINK: "" }
+};
