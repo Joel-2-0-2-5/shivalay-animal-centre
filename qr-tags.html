@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QR tag sheet | Shivalay</title>
+<style>
+body{font:16px/1.5 Inter,system-ui,sans-serif;margin:0;padding:16px;color:#16241C;background:#F1EFE6}
+.ctl{max-width:700px;margin:0 auto 20px}textarea{width:100%;min-height:90px;font:inherit;padding:8px}
+button{min-height:44px;padding:8px 16px;margin:6px 6px 0 0;font:600 1rem inherit;border:2px solid #16241C;background:#16241C;color:#F1EFE6;border-radius:8px;cursor:pointer}
+button.alt{background:none;color:#16241C}#msg{color:#8F2C22}
+#sheet{display:grid;grid-template-columns:repeat(3,1fr);max-width:190mm;margin:0 auto;background:#fff}
+.tag{border:1px dashed #888;padding:6mm 3mm;text-align:center;break-inside:avoid;height:62mm;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1mm}
+.tag .qr{width:32mm;height:32mm}.tag .qr img,.tag .qr canvas{width:32mm!important;height:32mm!important}
+.tag b{font:700 18pt Lora,Georgia,serif}.tag small{font-size:6.5pt;word-break:break-all;color:#333}.tag i{font-size:7pt;font-style:normal}
+@media print{body{background:#fff;padding:0}.ctl{display:none}@page{size:A4;margin:10mm}}
+</style></head><body>
+<div class="ctl"><h1>QR collar tag sheet</h1>
+<p>Type animal IDs separated by commas or new lines (example: SH-0001, SH-0002), or load all adoptable animals.</p>
+<label for="ids">Animal IDs</label><textarea id="ids" placeholder="SH-0001, SH-0002"></textarea>
+<button id="make">Make tags</button><button class="alt" id="adoptable">Load all adoptable</button><button class="alt" onclick="print()">Print</button>
+<p id="msg" role="alert"></p>
+<p><small>Print at 100% scale (no "fit to page"). Dashed lines are cut guides. The QR code opens the animal's profile; the printed link is for people who cannot scan. Collars can be lost, so profiles never rely on the tag alone.</small></p></div>
+<div id="sheet"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="config.js"></script><script src="data/sample-data.js"></script>
+<script>
+(function(){
+var C=window.CONFIG,$=function(s){return document.querySelector(s)};
+if(/YOUR-USERNAME/.test(C.SITE_BASE_URL))$("#msg").textContent="Warning: SITE_BASE_URL in config.js is still the placeholder. QR codes will not work until you change it.";
+function parseCSV(t){var rows=[],r=[],f="",q=false,i,c;t=t.replace(/^\uFEFF/,"");
+for(i=0;i<t.length;i++){c=t[i];if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
+else if(c=='"')q=true;else if(c==","){r.push(f);f=""}else if(c=="\n"||c=="\r"){if(c=="\r"&&t[i+1]=="\n")i++;r.push(f);f="";if(r.some(function(x){return x}))rows.push(r);r=[]}else f+=c}
+r.push(f);if(r.some(function(x){return x}))rows.push(r);
+var h=(rows.shift()||[]).map(function(x){return x.trim().toLowerCase()});
+return rows.map(function(a){var o={};h.forEach(function(k,i){o[k]=(a[i]||"").trim()});return o})}
+async function data(){if(C.ANIMALS_CSV_URL){try{var r=await fetch(C.ANIMALS_CSV_URL);if(!r.ok)throw 0;return parseCSV(await r.text())}catch(e){}}return window.SAMPLE_ANIMALS||[]}
+function make(){var ids=$("#ids").value.toUpperCase().split(/[\s,;]+/).filter(Boolean),bad=ids.filter(function(x){return!/^SH-\d{4}$/.test(x)}),s=$("#sheet");s.innerHTML="";
+if(bad.length)$("#msg").textContent="Not a valid ID (use SH-0001 format): "+bad.join(", ");else if(!/YOUR-USERNAME/.test(C.SITE_BASE_URL))$("#msg").textContent="";
+ids.filter(function(x){return/^SH-\d{4}$/.test(x)}).forEach(function(id){
+var url=C.SITE_BASE_URL+"/#/animal/"+id,d=document.createElement("div");d.className="tag";
+d.innerHTML='<div class="qr"></div><b></b><small></small><i></i>';
+d.querySelector("b").textContent=id;d.querySelector("small").textContent=url.replace(/^https?:\/\//,"");d.querySelector("i").textContent=C.CENTRE_NAME;
+s.appendChild(d);new QRCode(d.querySelector(".qr"),{text:url,width:256,height:256,correctLevel:QRCode.CorrectLevel.M})})}
+$("#make").onclick=make;
+$("#adoptable").onclick=async function(){var L=await data();$("#ids").value=L.filter(function(a){return a.status==="Adoptable"&&String(a.published).toLowerCase()==="yes"}).map(function(a){return a.animal_id}).join(", ");make()};
+})();
+</script></body></html>
