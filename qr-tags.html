@@ -35,7 +35,7 @@ async function data(){if(C.ANIMALS_CSV_URL){try{var r=await fetch(C.ANIMALS_CSV_
 function make(){var ids=$("#ids").value.toUpperCase().split(/[\s,;]+/).filter(Boolean),bad=ids.filter(function(x){return!/^SH-\d{4}$/.test(x)}),s=$("#sheet");s.innerHTML="";
 if(bad.length)$("#msg").textContent="Not a valid ID (use SH-0001 format): "+bad.join(", ");else if(!/YOUR-USERNAME/.test(C.SITE_BASE_URL))$("#msg").textContent="";
 ids.filter(function(x){return/^SH-\d{4}$/.test(x)}).forEach(function(id){
-var url=C.SITE_BASE_URL+"/#/animal/"+id,d=document.createElement("div");d.className="tag";
+var url=C.SITE_BASE_URL.replace(/\/+$/,"")+"/#/animal/"+id,d=document.createElement("div");d.className="tag";
 d.innerHTML='<div class="qr"></div><b></b><small></small><i></i>';
 d.querySelector("b").textContent=id;d.querySelector("small").textContent=url.replace(/^https?:\/\//,"");d.querySelector("i").textContent=C.CENTRE_NAME;
 s.appendChild(d);new QRCode(d.querySelector(".qr"),{text:url,width:256,height:256,correctLevel:QRCode.CorrectLevel.M})})}
