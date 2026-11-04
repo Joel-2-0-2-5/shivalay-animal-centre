@@ -5,17 +5,17 @@ window.CONFIG = {
   ADDRESS: "Lane No. 1, Wazidpur, Sector 135, Noida, Uttar Pradesh 201304",
   LANDMARK: "", 
  SITE_BASE_URL: "https://joel-2-0-2-5.github.io/shivalay-animal-centre/", // change after enabling GitHub Pages
-  PHONE: "+91 98180 48398",               // TODO: confirm with centre
-  WHATSAPP: "919818048398",               // TODO: confirm with centre (digits only, with country code)
-  EMAIL: "strayanimals12@gmail.com",      // TODO: confirm with centre
-  FACEBOOK: "https://facebook.com/hsanoida", // TODO: confirm with centre
-  INSTAGRAM: "https://instagram.com/houseofstray", // TODO: confirm with centre
+  PHONE: "+91 98180 48398",               
+  WHATSAPP: "919818048398",               
+  EMAIL: "strayanimals12@gmail.com",     
+  FACEBOOK: "https://facebook.com/hsanoida", 
+  INSTAGRAM: "https://instagram.com/houseofstray", 
   EMERGENCY_24X7_CLAIM: false, // TODO: confirm with centre; "24x7" appears only in parent-organisation material
   HOURS: "",          // TODO: confirm with centre. Blank shows "Please call ahead"
   FEES_INFO: "",      // TODO: confirm with centre (which services are free/paid). Blank shows "Please call ahead"
   ADOPTION_POLICY: "", // TODO: confirm with centre (fees, home check rules)
   HOME_CHECK_REQUIRED: null, // TODO: true/false once confirmed
-  SHOW_SAMPLE_BANNER: true,  // set false only when real data is live
+  SHOW_SAMPLE_BANNER: false,  // set false only when real data is live
   SHOW_HAPPY_TAILS: false,   // TODO: only true if the centre agrees
   // Google Sheets: File > Share > Publish to web > pick tab > CSV. Blank = use data/sample-data.js
   ANIMALS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdvAObR4QhKhzKUze-vO1KyefN4jGUUJlei0WV3EzR2D2hAf7Z7BuAS1iwZ-c3uaUxfsj89MohqsOK/pubhtml?gid=0&single=true",
