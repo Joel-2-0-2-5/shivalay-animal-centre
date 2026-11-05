@@ -15,7 +15,7 @@ window.CONFIG = {
   FEES_INFO: "",      // TODO: confirm with centre (which services are free/paid). Blank shows "Please call ahead"
   ADOPTION_POLICY: "", // TODO: confirm with centre (fees, home check rules)
   HOME_CHECK_REQUIRED: null, // TODO: true/false once confirmed
-  SHOW_SAMPLE_BANNER: false,  // set false only when real data is live
+  SHOW_SAMPLE_BANNER: true,  // set false only when real data is live
   SHOW_HAPPY_TAILS: false,   // TODO: only true if the centre agrees
   // Google Sheets: File > Share > Publish to web > pick tab > CSV. Blank = use data/sample-data.js
   ANIMALS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdvAObR4QhKhzKUze-vO1KyefN4jGUUJlei0WV3EzR2D2hAf7Z7BuAS1iwZ-c3uaUxfsj89MohqsOK/pubhtml?gid=0&single=true",
