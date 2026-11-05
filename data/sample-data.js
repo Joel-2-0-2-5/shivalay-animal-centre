@@ -1,7 +1,3 @@
-// SAMPLE DATA ONLY. All animals are fictional.
-(function(){
-const d={vaccinated:"Yes",sterilised:"Yes",ear_notched:"No",published:"Yes",last_updated:"2025-01-15",intake_date:"2024-11-02",area_found:"Sector 135",size:"Medium",sex:"Male",species:"Dog",photo_url:"",story:"",special_needs:"",temperament:"Friendly",good_with:"Adults",last_vaccination_date:"2025-01-10",breed_or_description:"Indie",colour:"Brown",approx_age:"2 years"};
-const rows=[
 // SAMPLE DATA ONLY. Every animal below is fictional.
 window.SAMPLE_ANIMALS = [
   {"animal_id": "SH-0001", "name": "Bholu", "species": "Dog", "sex": "Male", "approx_age": "2 years", "breed_or_description": "Indie", "colour": "Brown", "size": "Medium", "photo_url": "images/animals/SH-0001.jpg", "status": "Adoptable", "temperament": "Friendly", "good_with": "Children, adults", "special_needs": "", "story": "Bholu loves long walks and greets every visitor with a wagging tail. He walks well on a lead and is calm around children.", "vaccinated": "Yes", "last_vaccination_date": "2026-08-14", "sterilised": "Yes", "ear_notched": "No", "intake_date": "2026-05-12", "area_found": "Sector 135", "published": "Yes", "last_updated": "2026-10-18"},
@@ -29,5 +25,3 @@ window.SAMPLE_ANIMALS = [
   {"animal_id": "SH-0023", "name": "Bunty", "species": "Other", "sex": "Male", "approx_age": "1 year", "breed_or_description": "Rabbit", "colour": "White", "size": "Small", "photo_url": "", "status": "Fostered", "temperament": "Curious", "good_with": "Adults", "special_needs": "Needs a quiet home and a fresh vegetable diet.", "story": "Bunty was handed in when his family moved house, and is being fostered while a permanent home is found.", "vaccinated": "No", "last_vaccination_date": "", "sterilised": "Unknown", "ear_notched": "No", "intake_date": "2026-09-01", "area_found": "Sector 135", "published": "Yes", "last_updated": "2026-10-08"},
   {"animal_id": "SH-0024", "name": "Gabbar", "species": "Dog", "sex": "Male", "approx_age": "4 years", "breed_or_description": "Indie", "colour": "Brown", "size": "Large", "photo_url": "images/animals/SH-0024.jpg", "status": "In care", "temperament": "Protective", "good_with": "Experienced adopters", "special_needs": "Recovering from tick fever; on medication.", "story": "Gabbar looks tough but melts when his ears are scratched. He is being treated and will be ready for adoption soon.", "vaccinated": "Yes", "last_vaccination_date": "2026-10-01", "sterilised": "Yes", "ear_notched": "No", "intake_date": "2026-10-06", "area_found": "Wazidpur", "published": "Yes", "last_updated": "2026-10-26"}
 ];
-window.SAMPLE_ANIMALS=rows.map(r=>Object.assign({},d,r));
-})();
